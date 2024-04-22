@@ -1,0 +1,29 @@
+
+
+<h2 class="titulo">Usuarios</h2>
+<hr>
+<table class="table table-hover table-responsive">
+    <thead class="table-primary">
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>firstname</th>
+            <th>lastname</th>
+            <th>username</th>
+            <th>email</th>
+            <th>password</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let item of usuario; let i = index" 
+        class="animate__animated animate__fadeIn animate__faster"> 
+            <td>{{ i + 1 }}</td>
+            <td>   {{item.id}} </td> 
+            <td>   {{item.name.firstname}}</td> 
+            <td>   {{item.name.lastname}} </td>
+            <td>   {{item.username}}  </td>      
+            <td>   {{item.email}}  </td>    
+            <td>   {{item.password}} </td>
+            </tbody>
+</table>

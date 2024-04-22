@@ -1,0 +1,35 @@
+<h2 class="titulo">Lista de productos</h2>
+<hr>
+<table class="table table-hover table-responsive">
+    <thead class="table-primary">
+        <tr>
+            <th>#</th>
+            <th>Imagen</th>
+            <th>Nombre Producto</th>
+            <th>Precio</th>
+            <!-- <th>Descripcion</th>
+            <th>Categoria</th>
+            <th>Rate</th>
+            <th>Count</th> -->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let pro of producto; let i = index" 
+        class="animate__animated animate__fadeIn animate__faster"> 
+            <td>{{ i + 1 }}</td>
+            <td>
+                <img class="small-flag" [src]="pro.image">
+            </td>
+            <td>{{pro.title}}</td> 
+            <td>{{ pro.price | currency}}</td>
+            <!-- <td>{{ pro.description }}</td> -->
+            <!-- <td>{{ pro.category }}</td>
+            <td>{{ pro.rating.rate }}</td>     
+            <td>{{ pro.rating.count }}</td>      -->
+            <td><button (click)="verDetalles(pro.id!)" class="btn btn-primary">Ver</button></td>
+
+            
+        </tr>
+    </tbody>
+</table>

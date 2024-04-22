@@ -1,0 +1,74 @@
+<!-- <div *ngIf="detalle" class="detalle-container">
+    <h2>{{ detalle.title }}</h2>
+    <div class="detalle-content">
+      <div class="imagen">
+        <img class="small-flag" [src]="detalle.image">
+      </div>
+      <div class="descripcion">
+        <p><strong>Precio:</strong> {{ detalle.price }}</p>
+        <p><strong>Descripción:</strong> {{ detalle.description }}</p>
+        <p><strong>Categoría:</strong> {{ detalle.category }}</p>
+        <p><strong>Rate:</strong> {{ detalle.rating.rate }}</p>
+        <p><strong>Count:</strong> {{ detalle.rating.count }}</p>
+      </div>
+    </div>
+</div>
+   -->
+<div *ngIf="!detalle; else divdetalle" class="alert alert-info">
+  Espere por favor...
+</div>
+
+<ng-template #divdetalle>
+  <div *ngIf="detalle">
+      <div class="row">
+          <div class="col-12 d-flex justify-content-around">
+              <h2> Nombre del producto: <small>{{ detalle.title  }}</small></h2>
+          </div>
+      </div>
+      <div class="col">
+          <div class="card mb-12" style="max-width: 100%;">
+              <div class="row g-0">
+                  <div class="col-md-4 d-flex justify-content-center align-items-center">
+                      <img [src]="detalle.image" class="img-fluid img-thumbnail" />
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title d-flex justify-content-around"><strong>Información</strong></h5>
+                          <ul class="list-group">
+                              
+                              <li class="list-group-item">
+                                  <strong>Descripción:</strong> {{ detalle.description }}
+                              </li>
+                              <li class="list-group-item">
+                                  <strong>Categoría:</strong> {{ detalle.category }} 
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Precio:</strong>  {{detalle.price | currency }}
+                            </li>
+                              <li class="list-group-item">
+                                <strong>Rate:</strong> {{ detalle.rating.rate }} 
+                              </li>
+                              <li class="list-group-item">
+                                <strong>Count:</strong> {{detalle.rating.count }} 
+                             </li>
+                              
+                          </ul>
+                          <br>
+                          <div class="d-flex justify-content-around">
+
+                            <button (click)="regresar()" class="btn btn-success">Regresar</button>
+                            <button type="button" class="btn btn-outline-warning" (click)="agregarCarrito(detalle)">Agg carrito</button>
+                          </div>
+                          <!-- <td><button class="btn btn-success" (click)="agregarFavorito(titulo)">Agregar a favoritos</button></td> -->
+                     
+                        </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+  </div>
+
+  
+
+</ng-template>
