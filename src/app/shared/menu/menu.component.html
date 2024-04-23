@@ -11,16 +11,15 @@
                 <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                     <li class="nav-item nav-link" *ngFor="let item of Menu" [routerLink]="[item.ruta]"
                         routerLinkActive="active">
-                        {{item.texto}}
-
+                        <div *ngIf="authservice.islogged()">{{item.texto}}</div>
                     </li>
                 </ul>
-
+                <button *ngIf="authservice.islogged()" class="btn btn-danger" (click)="logout()">cerrar sesion</button>
             </div>
         </div>
 
-        <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <button *ngIf="authservice.islogged()" class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>

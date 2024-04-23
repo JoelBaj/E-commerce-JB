@@ -12,13 +12,13 @@ export class InterceptorService {
     console.log('Paso por el interceptor');
     
     let clonedRequest = req;
-    // if (localStorage.getItem('joelbajana')) { 
-    //   clonedRequest = req.clone({
-    //     setHeaders: {
-    //       Authorization: localStorage.getItem('joelbajana')!
-    //     }
-    //   })
-    // }
+    if (localStorage.getItem('joelbajanaGalarza')) { 
+      clonedRequest = req.clone({
+        setHeaders: {
+          Authorization: localStorage.getItem('joelbajanaGalarza')!
+        }
+      })
+    }
       
     return next.handle(clonedRequest).pipe(
        catchError(this.manejarError)

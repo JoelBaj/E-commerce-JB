@@ -44,7 +44,7 @@ button.btn-close:focus {
 .offcanvas-title{
     font-weight: bold;
 }
-/* @media(min-width: 991px) {
+ /* @media(min-width: 991px) {
 
     .nav-link::before {
         content: "";
@@ -65,4 +65,4 @@ button.btn-close:focus {
         visibility: visible;
     }
      
-} */
+}  */

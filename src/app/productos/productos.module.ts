@@ -8,6 +8,7 @@ import { DetallesProductoComponent } from './pages/detalles-producto/detalles-pr
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CarritoComponent } from './pages/carrito/carrito.component';
+import { CategoriaComponent } from './pages/categoria/categoria.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CarritoComponent } from './pages/carrito/carrito.component';
     UsuariosComponent,
     DetallesProductoComponent,
     CarritoComponent,
+    CategoriaComponent,
 
   ],
   imports: [

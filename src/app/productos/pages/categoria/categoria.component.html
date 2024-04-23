@@ -1,0 +1,38 @@
+
+<h2 class="titulo">Seleccione la categoría: <small>{{categoriaSeleccionada | titlecase}}</small></h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <button *ngFor="let categoria of categorias" [class]="getClaseCSS(categoria)"
+            (click)="activarCategoria(categoria)">
+            {{categoria | titlecase}}
+        </button>
+    </div>
+</div>
+<hr>
+<h2 class="titulo">Lista de productos</h2>
+<hr>
+
+<table class="table table-hover table-responsive">
+    <thead class="table-primary">
+        <tr>
+            <th>#</th>
+            <th>Imagen</th>
+            <th>Nombre Producto</th>
+            <th>Precio</th>
+            <th>Categoría</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of productos; let i = index" class="animate__animated animate__fadeIn animate__faster">
+            <td>{{ i + 1 }}</td>
+            <td>
+                <img class="small-flag" [src]="producto.image">
+            </td>
+            <td>{{producto.title}}</td>
+            <td>{{producto.price | currency}}</td>
+            <td>{{producto.category}}</td>
+        </tr>
+    </tbody>
+</table>

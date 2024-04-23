@@ -25,6 +25,12 @@ export class ProductoService {
     return this.http.get<Producto>(`${this.urlApi}/products/${id}`);
     
   }
+  // categoriaProductos(): Observable<Producto[]> {
+  //   return this.http.get<Producto[]>(`${this.urlApi}/products/categories`);
+  // }
+    categoriaProductos(categoria: string): Observable<Producto[]> {
+    return this.http.get<Producto[]>(`${this.urlApi}/products/category/${categoria}`);
+  }
   guardarProducto(producto: Producto): void {
     let productoFavoritos: Producto[] = this.obtenerProductosFavoritos();
     productoFavoritos.push(producto);

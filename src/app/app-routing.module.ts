@@ -6,9 +6,13 @@ const routes: Routes = [
     path:'tienda',
     loadChildren:()=> import('./productos/productos.module').then(m => m.ProductosModule)
   },
+   {
+    path:'auth',
+    loadChildren:()=> import('./auth/auth.module').then(m => m.AuthModule)
+  },
   {
     path: '**',
-    redirectTo: 'tierda'
+    redirectTo: 'auth'
   }
 ];
 
